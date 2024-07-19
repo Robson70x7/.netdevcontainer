@@ -1,0 +1,15 @@
+version: '3'
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ../:/app:cached
+    networks:
+      - app
+
+
+networks:
+  app:
+    driver: bridge
